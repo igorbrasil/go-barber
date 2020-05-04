@@ -1,13 +1,11 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { Container } from './styles';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  name: string;
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button: React.FC = () => (
-  <Container>
-    <button type="button">teste</button>
+const Button: React.FC<ButtonProps> = ({ children, ...rest }) => (
+  <Container type="button" {...rest}>
+    {children}
   </Container>
 );
 export default Button;
